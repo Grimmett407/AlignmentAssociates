@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41E59470-4C74-40F6-9529-0C13C24E6810}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlignmentAssociates</RootNamespace>
+    <AssemblyName>AlignmentAssociates</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\EmailHelper.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\alex-shutin-205126-unsplash.jpg" />
+    <Content Include="Assets\Images\alignmentassociates2.png" />
+    <Content Include="Assets\Images\BlackRedTransparent.png" />
+    <Content Include="Assets\Images\BMFLogoOnAASite.png" />
+    <Content Include="Assets\Images\bryan-minear-315773-unsplash.jpg" />
+    <Content Include="Assets\Images\camp-kay-new.png" />
+    <Content Include="Assets\Images\CarolinaInkLogo.png" />
+    <Content Include="Assets\Images\ciprian-lipenschi-47643-unsplash.jpg" />
+    <Content Include="Assets\Images\DalmatianLogo.png" />
+    <Content Include="Assets\Images\darksection.jpg" />
+    <Content Include="Assets\Images\DEGC.png" />
+    <Content Include="Assets\Images\favicon.ico" />
+    <Content Include="Assets\Images\favicon.png" />
+    <Content Include="Assets\Images\FoggyBottom.jpg" />
+    <Content Include="Assets\Images\Hooker Icon BLUE.png" />
+    <Content Include="Assets\Images\HOTTScentsLogo.png" />
+    <Content Include="Assets\Images\israel-sundseth-1683-unsplash.jpg" />
+    <Content Include="Assets\Images\MabeLogo.png" />
+    <Content Include="Assets\Images\matthew-henry-49707-unsplash.jpg" />
+    <Content Include="Assets\Images\MountainPlainsCabin.jpg" />
+    <Content Include="Assets\Images\NightLights!!.jpg" />
+    <Content Include="Assets\Images\NightTimeCityScene.jpg" />
+    <Content Include="Assets\Images\nik-macmillan-280300-unsplash.jpg" />
+    <Content Include="Assets\Images\passion.jpg" />
+    <Content Include="Assets\Images\PeetDryer.png" />
+    <Content Include="Assets\Images\PleasantValley.png" />
+    <Content Include="Assets\Images\rawpixel-com-.jpg" />
+    <Content Include="Assets\Images\RiseAboveLogo.png" />
+    <Content Include="Assets\Images\ServiceFirstLogistics.png" />
+    <Content Include="Assets\Images\SME.png" />
+    <Content Include="Assets\Images\WIndmillSunset.jpg" />
+    <Content Include="Assets\index.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Template\ajax-load-more\loadMore.html" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Template\bootstrap\popper.min.js" />
+    <Content Include="Template\bower_components\animate.css\animate.css" />
+    <Content Include="Template\bower_components\animate.css\animate.min.css" />
+    <Content Include="Template\bower_components\animate.css\gulpfile.js" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\bounce.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\flash.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\headShake.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\jello.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\pulse.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\rubberBand.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\shake.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\swing.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\tada.css" />
+    <Content Include="Template\bower_components\animate.css\source\attention_seekers\wobble.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_entrances\bounceIn.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_entrances\bounceInDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_entrances\bounceInLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_entrances\bounceInRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_entrances\bounceInUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_exits\bounceOut.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_exits\bounceOutDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_exits\bounceOutLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_exits\bounceOutRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\bouncing_exits\bounceOutUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeIn.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInDownBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInLeftBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInRightBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_entrances\fadeInUpBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOut.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutDownBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutLeftBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutRightBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\fading_exits\fadeOutUpBig.css" />
+    <Content Include="Template\bower_components\animate.css\source\flippers\flip.css" />
+    <Content Include="Template\bower_components\animate.css\source\flippers\flipInX.css" />
+    <Content Include="Template\bower_components\animate.css\source\flippers\flipInY.css" />
+    <Content Include="Template\bower_components\animate.css\source\flippers\flipOutX.css" />
+    <Content Include="Template\bower_components\animate.css\source\flippers\flipOutY.css" />
+    <Content Include="Template\bower_components\animate.css\source\lightspeed\lightSpeedIn.css" />
+    <Content Include="Template\bower_components\animate.css\source\lightspeed\lightSpeedOut.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_entrances\rotateIn.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_entrances\rotateInDownLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_entrances\rotateInDownRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_entrances\rotateInUpLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_entrances\rotateInUpRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_exits\rotateOut.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_exits\rotateOutDownLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_exits\rotateOutDownRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_exits\rotateOutUpLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\rotating_exits\rotateOutUpRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_entrances\slideInDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_entrances\slideInLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_entrances\slideInRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_entrances\slideInUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_exits\slideOutDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_exits\slideOutLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_exits\slideOutRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\sliding_exits\slideOutUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\specials\hinge.css" />
+    <Content Include="Template\bower_components\animate.css\source\specials\rollIn.css" />
+    <Content Include="Template\bower_components\animate.css\source\specials\rollOut.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_entrances\zoomIn.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_entrances\zoomInDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_entrances\zoomInLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_entrances\zoomInRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_entrances\zoomInUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_exits\zoomOut.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_exits\zoomOutDown.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_exits\zoomOutLeft.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_exits\zoomOutRight.css" />
+    <Content Include="Template\bower_components\animate.css\source\zooming_exits\zoomOutUp.css" />
+    <Content Include="Template\bower_components\animate.css\source\_base.css" />
+    <Content Include="Template\bower_components\font-awesome\css\font-awesome.css" />
+    <Content Include="Template\bower_components\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Template\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Template\bower_components\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Template\bower_components\jarallax\dist\jarallax-video.min.js" />
+    <Content Include="Template\bower_components\jarallax\dist\jarallax.min.js" />
+    <Content Include="Template\bower_components\jarallax\gulpfile.js" />
+    <Content Include="Template\bower_components\jarallax\jarallax\jarallax-video.js" />
+    <Content Include="Template\bower_components\jarallax\jarallax\jarallax.js" />
+    <Content Include="Template\bower_components\jquery-knob\dist\jquery.knob.min.js" />
+    <Content Include="Template\bower_components\jquery-knob\excanvas.js" />
+    <Content Include="Template\bower_components\jquery-knob\index.html" />
+    <Content Include="Template\bower_components\jquery-knob\js\jquery.knob.js" />
+    <Content Include="Template\bower_components\jquery-knob\secretplan.jpg" />
+    <Content Include="Template\bower_components\jquery\AUTHORS.txt" />
+    <Content Include="Template\bower_components\jquery\dist\core.js" />
+    <Content Include="Template\bower_components\jquery\dist\jquery.js" />
+    <Content Include="Template\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="Template\bower_components\jquery\dist\jquery.slim.js" />
+    <Content Include="Template\bower_components\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Template\bower_components\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="Template\bower_components\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="Template\bower_components\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="Template\bower_components\jquery\LICENSE.txt" />
+    <Content Include="Template\bower_components\jquery\src\ajax.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\load.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\script.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\var\location.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Template\bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="Template\bower_components\jquery\src\attributes.js" />
+    <Content Include="Template\bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="Template\bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="Template\bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="Template\bower_components\jquery\src\attributes\support.js" />
+    <Content Include="Template\bower_components\jquery\src\attributes\val.js" />
+    <Content Include="Template\bower_components\jquery\src\callbacks.js" />
+    <Content Include="Template\bower_components\jquery\src\core.js" />
+    <Content Include="Template\bower_components\jquery\src\core\access.js" />
+    <Content Include="Template\bower_components\jquery\src\core\DOMEval.js" />
+    <Content Include="Template\bower_components\jquery\src\core\init.js" />
+    <Content Include="Template\bower_components\jquery\src\core\nodeName.js" />
+    <Content Include="Template\bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="Template\bower_components\jquery\src\core\ready-no-deferred.js" />
+    <Content Include="Template\bower_components\jquery\src\core\ready.js" />
+    <Content Include="Template\bower_components\jquery\src\core\readyException.js" />
+    <Content Include="Template\bower_components\jquery\src\core\stripAndCollapse.js" />
+    <Content Include="Template\bower_components\jquery\src\core\support.js" />
+    <Content Include="Template\bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Template\bower_components\jquery\src\css.js" />
+    <Content Include="Template\bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Template\bower_components\jquery\src\css\adjustCSS.js" />
+    <Content Include="Template\bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="Template\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Template\bower_components\jquery\src\css\showHide.js" />
+    <Content Include="Template\bower_components\jquery\src\css\support.js" />
+    <Content Include="Template\bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Template\bower_components\jquery\src\css\var\getStyles.js" />
+    <Content Include="Template\bower_components\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="Template\bower_components\jquery\src\css\var\rmargin.js" />
+    <Content Include="Template\bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Template\bower_components\jquery\src\css\var\swap.js" />
+    <Content Include="Template\bower_components\jquery\src\data.js" />
+    <Content Include="Template\bower_components\jquery\src\data\Data.js" />
+    <Content Include="Template\bower_components\jquery\src\data\var\acceptData.js" />
+    <Content Include="Template\bower_components\jquery\src\data\var\dataPriv.js" />
+    <Content Include="Template\bower_components\jquery\src\data\var\dataUser.js" />
+    <Content Include="Template\bower_components\jquery\src\deferred.js" />
+    <Content Include="Template\bower_components\jquery\src\deferred\exceptionHook.js" />
+    <Content Include="Template\bower_components\jquery\src\deprecated.js" />
+    <Content Include="Template\bower_components\jquery\src\dimensions.js" />
+    <Content Include="Template\bower_components\jquery\src\effects.js" />
+    <Content Include="Template\bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Template\bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="Template\bower_components\jquery\src\event.js" />
+    <Content Include="Template\bower_components\jquery\src\event\ajax.js" />
+    <Content Include="Template\bower_components\jquery\src\event\alias.js" />
+    <Content Include="Template\bower_components\jquery\src\event\focusin.js" />
+    <Content Include="Template\bower_components\jquery\src\event\support.js" />
+    <Content Include="Template\bower_components\jquery\src\event\trigger.js" />
+    <Content Include="Template\bower_components\jquery\src\exports\amd.js" />
+    <Content Include="Template\bower_components\jquery\src\exports\global.js" />
+    <Content Include="Template\bower_components\jquery\src\jquery.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\getAll.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="Template\bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Template\bower_components\jquery\src\offset.js" />
+    <Content Include="Template\bower_components\jquery\src\queue.js" />
+    <Content Include="Template\bower_components\jquery\src\queue\delay.js" />
+    <Content Include="Template\bower_components\jquery\src\selector-native.js" />
+    <Content Include="Template\bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="Template\bower_components\jquery\src\selector.js" />
+    <Content Include="Template\bower_components\jquery\src\serialize.js" />
+    <Content Include="Template\bower_components\jquery\src\traversing.js" />
+    <Content Include="Template\bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="Template\bower_components\jquery\src\traversing\var\dir.js" />
+    <Content Include="Template\bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Template\bower_components\jquery\src\traversing\var\siblings.js" />
+    <Content Include="Template\bower_components\jquery\src\var\arr.js" />
+    <Content Include="Template\bower_components\jquery\src\var\class2type.js" />
+    <Content Include="Template\bower_components\jquery\src\var\concat.js" />
+    <Content Include="Template\bower_components\jquery\src\var\document.js" />
+    <Content Include="Template\bower_components\jquery\src\var\documentElement.js" />
+    <Content Include="Template\bower_components\jquery\src\var\fnToString.js" />
+    <Content Include="Template\bower_components\jquery\src\var\getProto.js" />
+    <Content Include="Template\bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="Template\bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="Template\bower_components\jquery\src\var\ObjectFunctionString.js" />
+    <Content Include="Template\bower_components\jquery\src\var\pnum.js" />
+    <Content Include="Template\bower_components\jquery\src\var\push.js" />
+    <Content Include="Template\bower_components\jquery\src\var\rcssNum.js" />
+    <Content Include="Template\bower_components\jquery\src\var\rnothtmlwhite.js" />
+    <Content Include="Template\bower_components\jquery\src\var\slice.js" />
+    <Content Include="Template\bower_components\jquery\src\var\support.js" />
+    <Content Include="Template\bower_components\jquery\src\var\toString.js" />
+    <Content Include="Template\bower_components\jquery\src\wrap.js" />
+    <Content Include="Template\bower_components\magnific-popup\dist\jquery.magnific-popup.js" />
+    <Content Include="Template\bower_components\magnific-popup\dist\jquery.magnific-popup.min.js" />
+    <Content Include="Template\bower_components\magnific-popup\dist\magnific-popup.css" />
+    <Content Include="Template\bower_components\magnific-popup\Gruntfile.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\ajax.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\core.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\gallery.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\iframe.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\image.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\inline.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\retina.js" />
+    <Content Include="Template\bower_components\magnific-popup\src\js\zoom.js" />
+    <Content Include="Template\bower_components\masonry\dist\masonry.pkgd.js" />
+    <Content Include="Template\bower_components\masonry\dist\masonry.pkgd.min.js" />
+    <Content Include="Template\bower_components\masonry\masonry.js" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\ajax-loader.gif" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\owl.carousel.css" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\owl.carousel.min.css" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\owl.theme.default.css" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\owl.theme.default.min.css" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\owl.theme.green.css" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\owl.theme.green.min.css" />
+    <Content Include="Template\bower_components\owl.carousel\dist\assets\owl.video.play.png" />
+    <Content Include="Template\bower_components\owl.carousel\dist\owl.carousel.js" />
+    <Content Include="Template\bower_components\owl.carousel\dist\owl.carousel.min.js" />
+    <Content Include="Template\bower_components\pushy\css\demo.css" />
+    <Content Include="Template\bower_components\pushy\css\normalize.css" />
+    <Content Include="Template\bower_components\pushy\css\pushy.css" />
+    <Content Include="Template\bower_components\pushy\demo.html" />
+    <Content Include="Template\bower_components\pushy\Gruntfile.js" />
+    <Content Include="Template\bower_components\pushy\img\arrow.svg" />
+    <Content Include="Template\bower_components\pushy\js\pushy.js" />
+    <Content Include="Template\bower_components\pushy\js\pushy.min.js" />
+    <Content Include="Template\bower_components\pushy\LICENSE.txt" />
+    <Content Include="Template\bower_components\typed.js\assets\demos.css" />
+    <Content Include="Template\bower_components\typed.js\assets\demos.js" />
+    <Content Include="Template\bower_components\typed.js\lib\typed.js" />
+    <Content Include="Template\bower_components\typed.js\lib\typed.min.js" />
+    <Content Include="Template\bower_components\typed.js\src\defaults.js" />
+    <Content Include="Template\bower_components\typed.js\src\html-parser.js" />
+    <Content Include="Template\bower_components\typed.js\src\initializer.js" />
+    <Content Include="Template\bower_components\typed.js\src\typed.js" />
+    <Content Include="Template\bower_components\waypoints\lib\jquery.waypoints.js" />
+    <Content Include="Template\bower_components\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="Template\bower_components\waypoints\lib\noframework.waypoints.js" />
+    <Content Include="Template\bower_components\waypoints\lib\noframework.waypoints.min.js" />
+    <Content Include="Template\bower_components\waypoints\lib\shortcuts\infinite.js" />
+    <Content Include="Template\bower_components\waypoints\lib\shortcuts\infinite.min.js" />
+    <Content Include="Template\bower_components\waypoints\lib\shortcuts\inview.js" />
+    <Content Include="Template\bower_components\waypoints\lib\shortcuts\inview.min.js" />
+    <Content Include="Template\bower_components\waypoints\lib\shortcuts\sticky.js" />
+    <Content Include="Template\bower_components\waypoints\lib\shortcuts\sticky.min.js" />
+    <Content Include="Template\bower_components\waypoints\lib\waypoints.debug.js" />
+    <Content Include="Template\bower_components\waypoints\lib\zepto.waypoints.js" />
+    <Content Include="Template\bower_components\waypoints\lib\zepto.waypoints.min.js" />
+    <Content Include="Template\bower_components\wow\css\libs\animate.css" />
+    <Content Include="Template\bower_components\wow\css\site.css" />
+    <Content Include="Template\bower_components\wow\dist\wow.js" />
+    <Content Include="Template\bower_components\wow\dist\wow.min.js" />
+    <Content Include="Template\css\animate.css" />
+    <Content Include="Template\css\landing-single-product.css" />
+    <Content Include="Template\css\plugins\plugins.css" />
+    <Content Include="Template\css\shop-style.css" />
+    <Content Include="Template\css\style-leftNavbar.css" />
+    <Content Include="Template\css\style.css" />
+    <Content Include="Template\cubeportfolio\css\cubeportfolio.css" />
+    <Content Include="Template\cubeportfolio\css\cubeportfolio.min.css" />
+    <Content Include="Template\cubeportfolio\img\cbp-sprite.png" />
+    <Content Include="Template\cubeportfolio\js\jquery.cubeportfolio.js" />
+    <Content Include="Template\cubeportfolio\js\jquery.cubeportfolio.min.js" />
+    <Content Include="Template\dzsparallaxer\advancedscroller\plugin.css" />
+    <Content Include="Template\dzsparallaxer\advancedscroller\plugin.js" />
+    <Content Include="Template\dzsparallaxer\dzsparallaxer.css" />
+    <Content Include="Template\dzsparallaxer\dzsparallaxer.js" />
+    <Content Include="Template\dzsparallaxer\scroller.css" />
+    <Content Include="Template\dzsparallaxer\scroller.js" />
+    <Content Include="Template\et-line-font\et-line.dev.svg" />
+    <Content Include="Template\et-line-font\fonts\et-line.svg" />
+    <Content Include="Template\et-line-font\index.html" />
+    <Content Include="Template\et-line-font\lte-ie7.js" />
+    <Content Include="Template\et-line-font\Read Me.txt" />
+    <Content Include="Template\et-line-font\style.css" />
+    <Content Include="Template\images\bg1.jpg" />
+    <Content Include="Template\images\bg2.jpg" />
+    <Content Include="Template\images\bg3.jpg" />
+    <Content Include="Template\images\bg4.jpg" />
+    <Content Include="Template\images\cl-1.png" />
+    <Content Include="Template\images\cl-2.png" />
+    <Content Include="Template\images\cl-3.png" />
+    <Content Include="Template\images\cl-4.png" />
+    <Content Include="Template\images\cl-5.png" />
+    <Content Include="Template\images\con1.jpg" />
+    <Content Include="Template\images\con2.jpg" />
+    <Content Include="Template\images\con3.jpg" />
+    <Content Include="Template\images\img1.jpg" />
+    <Content Include="Template\images\img10.jpg" />
+    <Content Include="Template\images\img11.jpg" />
+    <Content Include="Template\images\img12.jpg" />
+    <Content Include="Template\images\img13.jpg" />
+    <Content Include="Template\images\img14.jpg" />
+    <Content Include="Template\images\img15.jpg" />
+    <Content Include="Template\images\img16.jpg" />
+    <Content Include="Template\images\img2.jpg" />
+    <Content Include="Template\images\img3.jpg" />
+    <Content Include="Template\images\img4.jpg" />
+    <Content Include="Template\images\img5.jpg" />
+    <Content Include="Template\images\img6.jpg" />
+    <Content Include="Template\images\img7.jpg" />
+    <Content Include="Template\images\img8.jpg" />
+    <Content Include="Template\images\img9.jpg" />
+    <Content Include="Template\images\logo-light.png" />
+    <Content Include="Template\images\logo.png" />
+    <Content Include="Template\images\mac1.png" />
+    <Content Include="Template\images\pin.png" />
+    <Content Include="Template\images\quote.png" />
+    <Content Include="Template\images\team1.jpg" />
+    <Content Include="Template\images\team2.jpg" />
+    <Content Include="Template\images\team3.jpg" />
+    <Content Include="Template\images\team4.jpg" />
+    <Content Include="Template\index.html" />
+    <Content Include="Template\js\cube-mosaic.js" />
+    <Content Include="Template\js\cube-thumbSlider.js" />
+    <Content Include="Template\js\folio-load-more.js" />
+    <Content Include="Template\js\gmaps-custom.js" />
+    <Content Include="Template\js\jquery.easing.min.js" />
+    <Content Include="Template\js\jquery.gmap.min.js" />
+    <Content Include="Template\js\jquery.preloader.min.js" />
+    <Content Include="Template\js\jquery.slimscroll.min.js" />
+    <Content Include="Template\js\jquery.sticky.js" />
+    <Content Include="Template\js\modernizr.custom.js" />
+    <Content Include="Template\js\onepage-leftNav.js" />
+    <Content Include="Template\js\onepage.custom.js" />
+    <Content Include="Template\js\plugins\plugins.js" />
+    <Content Include="Template\js\revolution.js" />
+    <Content Include="Template\js\smooth-scroll.min.js" />
+    <Content Include="Template\js\testimonials.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\css-img\flags%402x.png" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\css-img\flags.png" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\css-img\wink.png" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\css-img\wink.svg" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\font-awesome.min.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\dropzone.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\hideShowPassword.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\intlTelInput.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\jquery-ui-slider-pips.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\jquery.stepper.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\jquery.steps.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\select2.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\smartforms-custom.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\smartforms-modal.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-addons\spectrum.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-forms-ie8.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-forms.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-loader.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-themes\black.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-themes\blue.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-themes\green.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-themes\purple.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-themes\red.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\smart-themes\yellow.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\images\dark.png" />
+    <Content Include="Template\smart-form\contact-recaptcha\images\foobg.png" />
+    <Content Include="Template\smart-form\contact-recaptcha\images\wood.png" />
+    <Content Include="Template\smart-form\contact-recaptcha\index.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\additional-methods.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\jquery-1.9.1.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\jquery-ui-custom.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\jquery-ui-touch-punch.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\jquery.form.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\jquery.maskedinput.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\jquery.placeholder.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\jquery.validate.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\smart-form.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\js\smartforms-modal.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\check.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\css\app.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\css\font-awesome.min.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\css\login.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\css\old-ie.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\css\tables-custom.css" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\dataprocess.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\index.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\js\app.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\js\jquery-1.9.1.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\js\jquery.hammer.min.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\js\login.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\js\plugins.js" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\login.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\logout.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\users.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\functions\emailValidation.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\phpmailer\class.phpmailer.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\phpmailer\class.phpmaileroauth.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\phpmailer\class.phpmaileroauthgoogle.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\phpmailer\class.pop3.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\phpmailer\class.smtp.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\phpmailer\get_oauth_token.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\phpmailer\PHPMailerAutoload.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\process_reCaptcha.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\autoload.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\ReCaptcha.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\RequestMethod.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\RequestMethod\Curl.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\RequestMethod\CurlPost.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\RequestMethod\Post.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\RequestMethod\Socket.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\RequestMethod\SocketPost.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\RequestParameters.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\recaptcha\ReCaptcha\Response.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\settings\settings.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\smartprocess.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\templates\autoresponder.php" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\templates\smartmessage.php" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Template\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="Template\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="Template\bower_components\animate.css\.bower.json" />
+    <Content Include="Template\bower_components\animate.css\animate-config.json" />
+    <Content Include="Template\bower_components\animate.css\bower.json" />
+    <Content Include="Template\bower_components\animate.css\LICENSE" />
+    <Content Include="Template\bower_components\animate.css\package.json" />
+    <Content Include="Template\bower_components\font-awesome\.bower.json" />
+    <Content Include="Template\bower_components\font-awesome\.gitignore" />
+    <Content Include="Template\bower_components\font-awesome\.npmignore" />
+    <Content Include="Template\bower_components\font-awesome\bower.json" />
+    <Content Include="Template\bower_components\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Template\bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Template\bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Template\bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Template\bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Template\bower_components\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Template\bower_components\font-awesome\less\animated.less" />
+    <Content Include="Template\bower_components\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Template\bower_components\font-awesome\less\core.less" />
+    <Content Include="Template\bower_components\font-awesome\less\fixed-width.less" />
+    <Content Include="Template\bower_components\font-awesome\less\font-awesome.less" />
+    <Content Include="Template\bower_components\font-awesome\less\icons.less" />
+    <Content Include="Template\bower_components\font-awesome\less\larger.less" />
+    <Content Include="Template\bower_components\font-awesome\less\list.less" />
+    <Content Include="Template\bower_components\font-awesome\less\mixins.less" />
+    <Content Include="Template\bower_components\font-awesome\less\path.less" />
+    <Content Include="Template\bower_components\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Template\bower_components\font-awesome\less\screen-reader.less" />
+    <Content Include="Template\bower_components\font-awesome\less\stacked.less" />
+    <Content Include="Template\bower_components\font-awesome\less\variables.less" />
+    <Content Include="Template\bower_components\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_animated.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_core.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_icons.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_larger.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_list.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_mixins.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_path.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_stacked.scss" />
+    <Content Include="Template\bower_components\font-awesome\scss\_variables.scss" />
+    <Content Include="Template\bower_components\jarallax\.bower.json" />
+    <Content Include="Template\bower_components\jarallax\bower.json" />
+    <Content Include="Template\bower_components\jarallax\LICENSE" />
+    <Content Include="Template\bower_components\jarallax\package.json" />
+    <Content Include="Template\bower_components\jarallax\README.md" />
+    <Content Include="Template\bower_components\jquery-knob\.bower.json" />
+    <Content Include="Template\bower_components\jquery-knob\.gitignore" />
+    <Content Include="Template\bower_components\jquery-knob\bower.json" />
+    <Content Include="Template\bower_components\jquery-knob\knob.jquery.json" />
+    <Content Include="Template\bower_components\jquery-knob\LICENSE" />
+    <Content Include="Template\bower_components\jquery-knob\package.json" />
+    <Content Include="Template\bower_components\jquery-knob\README.md" />
+    <Content Include="Template\bower_components\jquery\.bower.json" />
+    <Content Include="Template\bower_components\jquery\bower.json" />
+    <Content Include="Template\bower_components\jquery\dist\jquery.min.map" />
+    <Content Include="Template\bower_components\jquery\dist\jquery.slim.min.map" />
+    <Content Include="Template\bower_components\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="Template\bower_components\jquery\README.md" />
+    <Content Include="Template\bower_components\jquery\src\.eslintrc.json" />
+    <Content Include="Template\bower_components\magnific-popup\.bower.json" />
+    <Content Include="Template\bower_components\magnific-popup\.gitignore" />
+    <Content Include="Template\bower_components\magnific-popup\.jshintrc" />
+    <Content Include="Template\bower_components\magnific-popup\.travis.yml" />
+    <Content Include="Template\bower_components\magnific-popup\bower.json" />
+    <Content Include="Template\bower_components\magnific-popup\composer.json" />
+    <Content Include="Template\bower_components\magnific-popup\LICENSE" />
+    <Content Include="Template\bower_components\magnific-popup\magnific-popup.jquery.json" />
+    <Content Include="Template\bower_components\magnific-popup\package.json" />
+    <Content Include="Template\bower_components\magnific-popup\README.md" />
+    <Content Include="Template\bower_components\magnific-popup\src\css\main.scss" />
+    <Content Include="Template\bower_components\magnific-popup\src\css\_settings.scss" />
+    <Content Include="Template\bower_components\masonry\.bower.json" />
+    <Content Include="Template\bower_components\masonry\bower.json" />
+    <Content Include="Template\bower_components\masonry\README.md" />
+    <Content Include="Template\bower_components\owl.carousel\dist\LICENSE" />
+    <Content Include="Template\bower_components\owl.carousel\dist\README.md" />
+    <Content Include="Template\bower_components\pushy\.bower.json" />
+    <Content Include="Template\bower_components\pushy\bower.json" />
+    <Content Include="Template\bower_components\pushy\package.json" />
+    <Content Include="Template\bower_components\pushy\README.md" />
+    <Content Include="Template\bower_components\pushy\scss\demo.scss" />
+    <Content Include="Template\bower_components\pushy\scss\pushy.scss" />
+    <Content Include="Template\bower_components\typed.js\lib\typed.min.js.map" />
+    <Content Include="Template\cubeportfolio\img\cbp-sprite.psd" />
+    <Content Include="Template\et-line-font\.DS_Store" />
+    <Content Include="Template\et-line-font\fonts\.DS_Store" />
+    <Content Include="Template\et-line-font\fonts\et-line.eot" />
+    <Content Include="Template\et-line-font\fonts\et-line.ttf" />
+    <Content Include="Template\et-line-font\fonts\et-line.woff" />
+    <Content Include="Template\scss\style-leftNavbar.scss" />
+    <Content Include="Template\scss\style.scss" />
+    <Content Include="Template\scss\_base.scss" />
+    <Content Include="Template\scss\_buttons.scss" />
+    <Content Include="Template\scss\_cta-parallax.scss" />
+    <Content Include="Template\scss\_custom-smartForm.scss" />
+    <Content Include="Template\scss\_dropdown.scss" />
+    <Content Include="Template\scss\_footer.scss" />
+    <Content Include="Template\scss\_header-left.scss" />
+    <Content Include="Template\scss\_header.scss" />
+    <Content Include="Template\scss\_hero.scss" />
+    <Content Include="Template\scss\_link-hovers.scss" />
+    <Content Include="Template\scss\_portfolio.scss" />
+    <Content Include="Template\scss\_preloader.scss" />
+    <Content Include="Template\scss\_pricing.scss" />
+    <Content Include="Template\scss\_team.scss" />
+    <Content Include="Template\scss\_testimonials.scss" />
+    <Content Include="Template\scss\_variables.scss" />
+    <Content Include="Template\smart-form\contact-recaptcha\css\css-img\Thumbs.db" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\fonts\fontawesome\fontawesome-webfont.woff2" />
+    <Content Include="Template\smart-form\contact-recaptcha\php\admin\fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="private.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55132</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55132/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
